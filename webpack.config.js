@@ -1,7 +1,8 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     devtool: false,
     entry: {
         popup: './src/popup.js',
@@ -11,5 +12,14 @@ module.exports = {
     output: {
         path: path.join(__dirname, 'dist'),
         filename: '[name].bundle.js'
-    }
+    },
+    plugins: [
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: './node_modules/webextension-polyfill/dist/browser-polyfill.js'
+                }
+            ]
+        })
+    ]
 }

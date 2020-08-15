@@ -169,26 +169,22 @@ export class PopupController
      * @returns {Promise<void>}
      */
     async displayMorePage() {
-        const tab = await browser.tabs.create({
-            url: "/page/more/more.html"
-        });
-
-        const listener = async (tabId, changeInfo, tab) => {
-            if (tab.status !== "complete") {
-                return;
-            }
-
-            await browser.tabs.sendMessage(tabId, {
-                item: this._item,
-                lgtms: this._lgtmList,
-                lastPageNo: this._lastPageNo
+        browser.tabs.create({
+            url: "/page/more/more.html",
+            active: false
+        }).then(tab => {
+            browser.tabs.onUpdated.addListener(() => {
+                browser.tabs.sendMessage(tab.id, {
+                    item: this._item,
+                    lgtms: this._lgtmList,
+                    lastPageNo: this._lastPageNo
+                }).then(() => {
+                    browser.tabs.update(tab.id, {
+                        active: true
+                    });
+                });
             });
-        };
-
-        browser.tabs.onUpdated.addListener(listener, {
-            properties: ["status"],
-            tabId: tab.id
-        });
+        })
     }
 
     /**
