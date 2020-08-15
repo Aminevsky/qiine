@@ -1,4 +1,4 @@
-import {OptionsController} from "/src/controller/OptionsController.js";
+import {OptionsController} from "./controller/OptionsController.js";
 
 const controller = new OptionsController();
 controller.display();

@@ -1,4 +1,4 @@
-import {PopupController} from "/src/controller/PopupController.js";
+import {PopupController} from "./controller/PopupController.js";
 
 const controller = new PopupController();
 controller.init();

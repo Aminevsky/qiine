@@ -1,4 +1,4 @@
-import {MoreController} from "/src/controller/MoreController.js";
+import {MoreController} from "./controller/MoreController.js";
 
 browser.runtime.onMessage.addListener((request) => {
     const controller = new MoreController();
