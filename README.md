@@ -1,6 +1,6 @@
 # Qiine
 
-Qiineは [Qiita](https://qiita.com/) のLGTMを表示するFirefoxアドオンです。
+Qiineは [Qiita](https://qiita.com/) のLGTMを表示するアドオンです。
 
 - ツールバーのポップアップにLGTMを表示します（Qiita記事を読んでいるときのみ）
 - ポップアップの "More" ボタンからLGTM専用のページを開くことができます
@@ -19,9 +19,16 @@ QiitaのAPI制限については [Qiita API v2ドキュメント](https://qiita.
 
 [addons.mozilla.org](https://addons.mozilla.org/ja/firefox/addon/qiine/) からインストールできます。
 
+## ビルド
+
+```
+$ npm install
+$ npm run build
+```
+
 # About Qiine
 
-Qiine is a Firefox add-on that shows LGTMs of [Qiita](https://qiita.com/).
+Qiine is an add-on that shows LGTMs of [Qiita](https://qiita.com/).
 
 - LGTMs on popup in toolbar (only when browsing Qiita articles)
 - LGTM-specified page from "More" button on popup
@@ -33,3 +40,10 @@ Notice: This add-on is Japanese only. Because Qiita has only Japanese UI.
 ## Install
 
 This add-on is available from [addons.mozilla.org](https://addons.mozilla.org/ja/firefox/addon/qiine/).
+
+## Build
+
+```
+$ npm install
+$ npm run build
+```
